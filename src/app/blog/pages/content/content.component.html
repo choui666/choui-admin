@@ -1,0 +1,19 @@
+
+
+<div nz-row [nzType]="'flex'">
+    <div nz-col [nzSpan]="19"  >
+        <ul nz-menu [nzMode]="'vertical'">
+            <ng-container *ngFor="let item of contentList">
+                <li nz-menu-item><i class="anticon anticon-mail"></i> {{item}}</li>
+            </ng-container>
+        </ul>
+    </div>
+    <div nz-col [nzSpan]="5">
+        <nz-checkable-tag>
+            Tag1
+        </nz-checkable-tag>
+        <nz-checkable-tag>
+            Tag2
+        </nz-checkable-tag>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<nz-layout>
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]="30" [nzBreakpoint]="'lg'">
+        <div class="logo">
+        </div>
+        <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+            <li nz-menu-item *ngFor="let menu of menus" [routerLink]="menu.url">
+                      <span>
+                        <i [class]="'anticon anticon-'+menu.icon"></i>
+                        <span class="nav-text">{{menu.name}}</span>
+                     </span>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout>
+        <nz-header style="background:#057ad6; padding:0;">
+            <div nz-row [nzType]="'flex'" style="margin-top: 1%">
+                <div nz-form-label nz-col [nzSpan]="21">
+                </div>
+                <div nz-form-label nz-col [nzSpan]="3">
+                    <nz-avatar nzIcon="user" style="background-color:#87d068;"></nz-avatar>
+                </div>
+            </div>
+        </nz-header>
+        <nz-content style="margin:24px 16px 0;">
+            <router-outlet></router-outlet>
+        </nz-content>
+        <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular @Auther choui</nz-footer>
+    </nz-layout>
+</nz-layout>
+<nz-spin [nzSpinning]="_isSpinning" [nzSize]="'large'">
+</nz-spin>

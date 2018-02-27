@@ -1,0 +1,12 @@
+[
+  {
+    "name" : "首页",
+    "icon": "home",
+    "url": "index"
+  },
+  {
+    "name" : "编辑",
+    "icon": "edit",
+    "url": "edit"
+  }
+]
