@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {IndexComponent} from './pages/index/index.component';
 import {EditComponent} from './pages/edit/edit.component';
 import {AdminComponent} from './admin.component';
+import { CanAdminProvide } from './service/guard';
 
 const routes: Routes = [
     {
@@ -15,7 +16,8 @@ const routes: Routes = [
             },
             {
                 path: 'edit',
-                component: EditComponent
+                component: EditComponent,
+                canActivate: [ CanAdminProvide ]
             }, {
                 path: '**',
                 redirectTo: 'index'
@@ -35,3 +37,5 @@ const routes: Routes = [
 })
 export class AdminRoutingModule {
 }
+
+

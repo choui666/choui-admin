@@ -2,8 +2,8 @@
     <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]="30" [nzBreakpoint]="'lg'">
         <div class="logo">
         </div>
-        <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
-            <li nz-menu-item *ngFor="let menu of menus" [routerLink]="menu.url"  routerLinkActive="active">
+        <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'" [nzClickActive]="false">
+            <li  nz-menu-item *ngFor="let menu of menus" [routerLink]="menu.url" [nzSelected]="currentUrl===('/admin/'+menu.url)" routerLinkActive="active">
                       <span>
                         <i [class]="'anticon anticon-'+menu.icon"></i>
                         <span class="nav-text">{{menu.name}}</span>

@@ -14,8 +14,7 @@ interface Tag {
 @Component({
     selector: 'app-edit',
     templateUrl: './edit.component.html',
-    styleUrls: ['./edit.component.css'],
-    providers: [EditService]
+    styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
 
