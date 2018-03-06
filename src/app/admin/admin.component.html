@@ -3,7 +3,7 @@
         <div class="logo">
         </div>
         <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
-            <li nz-menu-item *ngFor="let menu of menus" [routerLink]="menu.url">
+            <li nz-menu-item *ngFor="let menu of menus" [routerLink]="menu.url"  routerLinkActive="active">
                       <span>
                         <i [class]="'anticon anticon-'+menu.icon"></i>
                         <span class="nav-text">{{menu.name}}</span>

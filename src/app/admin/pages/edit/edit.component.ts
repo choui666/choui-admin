@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NzInputDirectiveComponent, NzMessageService } from 'ng-zorro-antd';
 import { EditService } from '../../service/edit.service';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 
 interface Tag {
@@ -27,17 +28,42 @@ export class EditComponent implements OnInit {
     @ViewChild('input')
     input: NzInputDirectiveComponent;
 
+    article: any;
+    isAdd = true;
 
-    constructor(private service: EditService, private _message: NzMessageService) {
+
+    constructor(private service: EditService, private _message: NzMessageService, private activatedRoute: ActivatedRoute) {
+
+        this.article = window.localStorage.getItem('edit');
+        if (this.article) {
+            window.localStorage.removeItem('edit');
+            this.article = JSON.parse(this.article);
+            this.isAdd = false;
+            this.editorContent = this.article.article_content;
+            this.shortCuts = this.article.article_shortCuts;
+            this.title = this.article.article_title;
+        }
+
     }
 
     ngOnInit() {
         this.service.getTags().subscribe((result: any) => {
             if (result.status === '0') {
                 this.tags = result.data;
+                if (!this.isAdd && this.article.tagIds) {
+                    this.article.tagIds.split(',').forEach(item => {
+                        this.tags.map(item2 => {
+                            if (item2.id === item * 1) {
+                                item2.checked = true;
+                            }
+                            return item2;
+                        });
+                    });
+                }
             }
         });
     }
+
 
     save() {
         const tags = this.tags.filter(item => item.checked);
@@ -53,6 +79,34 @@ export class EditComponent implements OnInit {
 
         this.service.saveArticle(
             {
+                title: this.title,
+                shortCuts: this.shortCuts,
+                tags: JSON.stringify(tags),
+                content: this.editorContent
+            }
+        ).subscribe((result: any) => {
+            if (result.status === '0') {
+                this._message.success('添加成功');
+            }
+        });
+    }
+
+
+    update() {
+        const tags = this.tags.filter(item => item.checked);
+        if (!this.title) {
+            return this._message.warning('标题不能为空');
+        } else if (!this.shortCuts) {
+            return this._message.warning('简介不能为空');
+        } else if (!tags) {
+            return this._message.warning('标签不能为空');
+        } else if (!this.editorContent) {
+            return this._message.warning('内容不能为空');
+        }
+
+        this.service.updateArticle(
+            {
+                id: this.article.article_id,
                 title: this.title,
                 shortCuts: this.shortCuts,
                 tags: JSON.stringify(tags),

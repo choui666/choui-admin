@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## 第三方插件
+1 将输入内容转成html,且可以预览的插件，主要用于编辑[angular2-markdown](https://github.com/dimpu/ngx-md)

@@ -5,7 +5,8 @@
 
 export const environment = {
     production: false,
-    baseUrl: 'https://chouihub.com/crwal/',
+    // baseUrl: 'https://chouihub.com/crwal/',
+    baseUrl: 'http://localhost:3003/',
     getUrl: (_url) => {
         return environment.baseUrl + _url;
     }

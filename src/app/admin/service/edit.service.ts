@@ -25,4 +25,8 @@ export class EditService {
     saveArticle(param: { title: string, content: string, shortCuts: string, tags: string }) {
         return this.http.post(environment.getUrl('blog/saveArticle'), param);
     }
+
+    updateArticle(param: { id: number , title: string, content: string, shortCuts: string, tags: string }) {
+        return this.http.post(environment.getUrl('blog/updateArticle'), param);
+    }
 }
