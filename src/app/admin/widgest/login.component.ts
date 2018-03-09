@@ -49,7 +49,7 @@ export class LoginComponent {
         }
     }
 
-    handleCancel(e) {
+    handleCancel() {
         this.subject.destroy('onCancel');
     }
 

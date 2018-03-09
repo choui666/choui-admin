@@ -3,11 +3,12 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
+export  function getUrl(_url) {
+    return this.baseUrl + _url;
+}
+
 export const environment = {
     production: false,
-    // baseUrl: 'https://chouihub.com/crwal/',
-    baseUrl: 'http://localhost:3003/',
-    getUrl: (_url) => {
-        return environment.baseUrl + _url;
-    }
+    baseUrl: 'https://chouihub.com/crwal/',  // baseUrl: 'http://localhost:3003/',
+    getUrl
 };

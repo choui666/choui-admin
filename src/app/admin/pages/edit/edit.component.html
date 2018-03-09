@@ -42,7 +42,7 @@
 </div>
 
 <div nz-row [nzType]="'flex'" style="margin-top: 8px;">
-    <div nz-form-label nz-col [nzSpan]="12">
+    <div nz-form-label nz-col [nzSpan]="16">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Markdown</h3>
@@ -53,13 +53,13 @@
         </div>
 
     </div>
-    <div nz-form-label nz-col [nzSpan]="12">
+    <div nz-form-label nz-col [nzSpan]="8">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">HTML</h3>
             </div>
             <div class="panel-body" style="overflow-y:auto; height: 72vh;">
-                <markdown [data]="editorContent">
+                <markdown [data]="editorContent" class="mypreView">
                 </markdown>
             </div>
         </div>

@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4201",
-    "build": "ng build --prod --env=prod --verbose --base-href=/blogAdmin/",
+    "build": "ng build --prod   --verbose --base-href=/blogAdmin/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -26,7 +26,7 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/platform-server": "^5.2.6",
     "@angular/router": "^5.0.0",
-    "@angular/service-worker": "^5.2.6",
+    "@angular/service-worker": "^5.2.8",
     "@nebular/auth": "^2.0.0-rc.5",
     "@nebular/theme": "^2.0.0-rc.5",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0",
