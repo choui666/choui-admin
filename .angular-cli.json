@@ -3,7 +3,6 @@
   "project": {
     "name": "choui-admin"
   },
-  "serviceWorker": true,
   "apps": [
     {
       "root": "src",
@@ -13,6 +12,7 @@
         "favicon.ico",
         "manifest.json"
       ],
+      "serviceWorker": true,
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",

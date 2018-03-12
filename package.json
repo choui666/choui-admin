@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server:work": "ngu-sw-manifest --module src/app/app.module.ts --out dist/ngsw-manifest.json"
+    "build:dev":"ng build --prod   --verbose",
+    "dev":"http-server ./dist -p 8080 -o",
+    "test":"npm run build:dev&&npm run dev"
   },
   "private": true,
   "dependencies": {
@@ -47,6 +49,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.2.0",
+    "http-server": "^0.11.1",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",

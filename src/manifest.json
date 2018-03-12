@@ -1,6 +1,6 @@
 {
-  "name": "Progressive Web Cat",
-  "short_name": "PWCat",
+  "name": "Progressive blog admin",
+  "short_name": "chouiBlog",
   "description": "A funny cat image generator",
   "icons": [
     {
