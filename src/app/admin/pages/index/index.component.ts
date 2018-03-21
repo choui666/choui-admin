@@ -22,7 +22,7 @@ export class IndexComponent implements OnInit {
 
     ngOnInit() {
 
-        this.service.getContentList(0).subscribe(result => {
+        this.service.getContentList(1).subscribe(result => {
             this._dataSet = result.list;
             this._nzTotal = result.totalCount;
         });
@@ -47,6 +47,13 @@ export class IndexComponent implements OnInit {
         const allUnChecked = this._displayData.every(value => !value.checked);
         this._allChecked = allChecked;
         this._indeterminate = (!allChecked) && (!allUnChecked);
+    }
+
+    pageChange(index: number) {
+        this.service.getContentList(index).subscribe(result => {
+            this._dataSet = result.list;
+            this._nzTotal = result.totalCount;
+        });
     }
 
     gotoEdit(item) {

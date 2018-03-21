@@ -1,6 +1,6 @@
 <nz-table #nzTable [nzAjaxData]="_dataSet"  (nzDataChange)="_displayDataChange($event)" [nzPageSize]="10"
           [nzTotal]="_nzTotal"
-          (nzPageIndexChange)="_refreshStatus($event)" (nzPageSizeChange)="_refreshStatus()">
+          (nzPageIndexChange)="pageChange($event)" (nzPageSizeChange)="_refreshStatus()">
     <thead nz-thead>
         <tr>
             <th nz-th nzCheckbox>

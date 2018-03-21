@@ -24,7 +24,7 @@ export class IndexService {
         this.spinner.next(false);
     }
 
-    getContentList(pageIndex: number, pageSize = '20') {
+    getContentList(pageIndex: number, pageSize = '10') {
         return this.http.get(environment.getUrl('blog/getArticles'), {
             params: {
                 pageIndex: pageIndex + '',

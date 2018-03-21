@@ -4,13 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4201",
+    "start": "ng serve --port 4200 --disable-host-check",
     "build": "ng build --prod   --verbose --base-href=/blogAdmin/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:dev":"ng build --prod   --verbose",
-    "dev":"http-server ./dist -p 8080 -o",
+    "dev":"http-server ./dist -p 8000 -o",
     "test":"npm run build:dev&&npm run dev"
   },
   "private": true,
